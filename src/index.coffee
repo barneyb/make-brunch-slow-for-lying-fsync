@@ -1,4 +1,4 @@
-sleep = require('sleep')
+spawnSync = require('child_process').spawnSync;
 
 module.exports = class SlowBrunch
     brunchPlugin: yes
@@ -21,4 +21,4 @@ module.exports = class SlowBrunch
     onCompile: (generatedFiles)=>
         if (@config.env[0] in @options.environments) or @options.alwaysRun
             console.log "about to be #{@options.delay}ms slower!", new Date()
-            sleep.usleep(@options.delay * 1000)
+            spawnSync('sleep', [@options.delay / 1000])

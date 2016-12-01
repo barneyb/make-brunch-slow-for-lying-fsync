@@ -5,7 +5,6 @@
   "main": "./src/index",
   "license": "BSD",
   "dependencies": {
-    "sleep": "5.0.0"
   },
   "scripts": {
   },

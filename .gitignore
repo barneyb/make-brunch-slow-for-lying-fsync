@@ -1,0 +1,9 @@
+*.ids
+*.iml
+*.ipr
+*.iws
+.idea
+.ideaDataSources
+/node_modules
+/lib
+/npm-debug.log

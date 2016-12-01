@@ -13,9 +13,10 @@ module.exports = class SlowBrunch
         }
 
         # Merge config
-        cfg = @config.plugins?.digest ? {}
+        cfg = @config.plugins?.makeBrunchSlow ? {}
         @options[k] = cfg[k] for k of cfg
 
     onCompile: (generatedFiles)=>
+        console.log @config.env[0], @options.environments, @options.alwaysRun
         if (@config.env[0] in @options.environments) or @options.alwaysRun
             console.log "about to be #{@options.delay}ms slower!", new Date()

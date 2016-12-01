@@ -1,4 +1,4 @@
-module.exports = class AfterBrunch
+module.exports = class SlowBrunch
     brunchPlugin: yes
 
     constructor: (@config) ->

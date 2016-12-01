@@ -2,12 +2,11 @@
   "name": "make-brunch-slow-for-lying-fsync",
   "version": "0.0.1",
   "description": "Make brunch build slow down to get around a lying fsync (e.g., on our Jenkins server)",
-  "main": "./lib/index",
+  "main": "./src/index",
   "license": "BSD",
   "dependencies": {
   },
   "scripts": {
-    "prepublish": "rm -rf lib && coffee --bare --output lib/ src/"
   },
   "readmeFilename": "README.md",
   "repository": {

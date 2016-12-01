@@ -20,6 +20,6 @@ module.exports = class SlowBrunch
 
     onCompile: (generatedFiles)=>
         if (@config.env[0] in @options.environments) or @options.alwaysRun
-            console.log "about to delay by #{@options.delay}ms", new Date()
+            console.log "about to delay by #{@options.delay}ms after", generatedFiles, new Date()
             spawnSync('sleep', [@options.delay / 1000])
             console.log "done with delay", new Date()

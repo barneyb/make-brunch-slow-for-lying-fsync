@@ -1,3 +1,5 @@
+sleep = require('sleep')
+
 module.exports = class SlowBrunch
     brunchPlugin: yes
 
@@ -8,7 +10,7 @@ module.exports = class SlowBrunch
             alwaysRun: false
             # Run in specific environments
             environments: ['production']
-            # how slow to be (in ms)
+            # how long to delay(in ms)
             delay: 0
         }
 
@@ -17,6 +19,6 @@ module.exports = class SlowBrunch
         @options[k] = cfg[k] for k of cfg
 
     onCompile: (generatedFiles)=>
-        console.log @config.env[0], @options.environments, @options.alwaysRun
         if (@config.env[0] in @options.environments) or @options.alwaysRun
             console.log "about to be #{@options.delay}ms slower!", new Date()
+            sleep.usleep(@options.delay * 1000)

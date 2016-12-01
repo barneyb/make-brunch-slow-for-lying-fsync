@@ -20,5 +20,4 @@ module.exports = class SlowBrunch
 
     onCompile: (generatedFiles)=>
         if (@config.env[0] in @options.environments) or @options.alwaysRun
-            console.log "about to be #{@options.delay}ms slower!", new Date()
             spawnSync('sleep', [@options.delay / 1000])
